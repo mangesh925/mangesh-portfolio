@@ -75,6 +75,7 @@ export const projectsData = [
       " Created a Next.js 13 & TypeScript-based SaaS with GPT-3.5 Turbo, enhancing PDF interactions by 40%, & incorporating tRPC, Zod, LangChain, Pinecone, Stripe, & shadcn-ui.",
     tags: ["React.js", "Next.js", "LangChain", "Pinecone", "Stripe"],
     imageUrl: corpcommentImg,
+    githubUrl: "https://docuchatter.vercel.app/",
   },
   {
     title: "Collab",
@@ -82,6 +83,7 @@ export const projectsData = [
       "Developed a Next.js 14, Tailwind CSS, & React-based collaborative whiteboarding tool with Clerk Auth & Convex for real-time features, enhancing remote teamwork.",
     tags: ["React.js", "TypeScript", "Tailwind CSS", "Clerk-Auth"],
     imageUrl: rmtdevImg,
+    githubUrl: "https://collab-app-kappa.vercel.app/",
   },
   {
     title: "TaskMate",
@@ -89,6 +91,7 @@ export const projectsData = [
       "An AI-note taking app made with TypeScript, integrating GPT-3.5 Turbo for language processing and DALL·E API for image generation, with Firebase storage and Drizzle ORM for database management.",
     tags: ["Drizzle ORM", "Firebase", "SQL", "DALL·E"],
     imageUrl: wordanalyticsImg,
+    githubUrl: "https://taskmate-ai.vercel.app/",
   },
 ] as const;
 

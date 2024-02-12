@@ -13,3 +13,6 @@ html.dark {
 .borderBlack {
   @apply border border-black/10;
 }
+.timeline-text-dark {
+  @apply text-black; /* This sets the text color to black */
+}

@@ -14,6 +14,7 @@ export default function Experience() {
   const { ref, inView } = useSectionInView("Experience");
   const { theme } = useTheme();
   const [isVisible, setIsVisible] = React.useState(false);
+
   React.useEffect(() => {
     if (inView) {
       setIsVisible(true);
@@ -25,43 +26,56 @@ export default function Experience() {
       <SectionHeading>My experience</SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
-          <React.Fragment key={index}>
-            <VerticalTimelineElement
-              visible={isVisible}
-              contentStyle={{
-                background:
-                  theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.1)",
-                boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
-                textAlign: "left",
-                padding: "1.3rem 2rem",
-              }}
-              contentArrowStyle={{
-                borderRight:
-                  theme === "light"
-                    ? "0.4rem solid #9ca3af"
-                    : "0.4rem solid #fff",
-              }}
-              date={item.date}
-              icon={item.icon}
-              iconStyle={{
-                background: theme === "light" ? "white" : "#10B981", // Example with a Tailwind green color
-                color: theme === "light" ? "#4B5563" : "white", // Example with Tailwind gray-600 for light and white for dark
-                boxShadow: "0 2px 4px 0 rgba(0,0,0,0.10)",
-                fontSize: "1.5rem",
-              }}
+          <VerticalTimelineElement
+            key={index}
+            visible={isVisible}
+            contentStyle={{
+              background: theme === "light" ? "#f3f4f6" : "#2D3748",
+              boxShadow: "none",
+              border:
+                theme === "light"
+                  ? "1px solid rgba(0, 0, 0, 0.05)"
+                  : "1px solid rgba(255, 255, 255, 0.1)",
+              textAlign: "left",
+              padding: "1.3rem 2rem",
+            }}
+            contentArrowStyle={{
+              borderRight:
+                theme === "light"
+                  ? "0.4rem solid #9ca3af"
+                  : "0.4rem solid #fff",
+            }}
+            date={item.date}
+            icon={item.icon}
+            iconStyle={{
+              background: theme === "light" ? "white" : "#10B981",
+              color: theme === "light" ? "#4B5563" : "white",
+              boxShadow: "0 2px 4px 0 rgba(0,0,0,0.10)",
+              fontSize: "1.5rem",
+            }}
+          >
+            <h3
+              className={`font-semibold capitalize ${
+                theme === "dark" ? "timeline-text-dark" : ""
+              }`}
             >
-              <h3 className="font-semibold capitalize  text-gray-700 dark:text-dark">
-                {item.title}
-              </h3>
-              <p className="font-normal !mt-0  text-gray-700 dark:text-dark">
-                {item.location}
-              </p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-dark">
-                {item.description}
-              </p>
-            </VerticalTimelineElement>
-          </React.Fragment>
+              {item.title}
+            </h3>
+            <p
+              className={`font-normal !mt-0 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              {item.location}
+            </p>
+            <p
+              className={`!mt-1 !font-normal ${
+                theme === "dark" ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              {item.description}
+            </p>
+          </VerticalTimelineElement>
         ))}
       </VerticalTimeline>
     </section>
